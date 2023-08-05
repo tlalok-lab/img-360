@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Imágenes 360°</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-sky src="https://res.cloudinary.com/dvlddnflu/image/upload/v1691025534/Huey_teocalli_sjhht4.jpg" rotation="0 0 0"></a-sky>
+  </a-scene>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var images = [
+        'https://res.cloudinary.com/dvlddnflu/image/upload/v1691219494/Cubo3_pxqate.jpg'
+      
+      ];
+
+      var index = 0;
+
+      setInterval(function() {
+        var sky = document.querySelector('a-sky');
+        sky.setAttribute('src', images[index]);
+
+        index++;
+        if (index >= images.length) {
+          index = 0;
+        }
+      }, 100000);
+    });
+  </script>
+</body>
+</html>
+
